@@ -5,14 +5,24 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import ClinicRegistration from "./pages/ClinicRegistration";
+import StaffRegistration from "./pages/StaffRegistration";
+import DoctorDashboard from "./pages/DoctorDashboard";
+import LabTechnicianDashboard from "./pages/LabTechnicianDashboard";
+import RadiologistDashboard from "./pages/RadiologistDashboard";
+import PharmacistDashboard from "./pages/PharmacistDashboard";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/clinic-registration" component={ClinicRegistration} />
+      <Route path="/staff-registration" component={StaffRegistration} />
+      <Route path="/doctor-dashboard" component={DoctorDashboard} />
+      <Route path="/lab-technician-dashboard" component={LabTechnicianDashboard} />
+      <Route path="/radiologist-dashboard" component={RadiologistDashboard} />
+      <Route path="/pharmacist-dashboard" component={PharmacistDashboard} />
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
